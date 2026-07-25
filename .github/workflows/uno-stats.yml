@@ -1,0 +1,34 @@
+name: Generate UNO stats animation
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # runs daily at midnight UTC
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate UNO card SVG
+        env:
+          GH_LOGIN: ${{ github.repository_owner }}
+        run: node scripts/generate-uno-stats.mjs dist/uno-stats.svg
+
+      - name: Push SVG to output-uno-stats branch
+        run: |
+          cd dist
+          git init -b output-uno-stats
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add uno-stats.svg
+          git commit -m "chore: update UNO stats animation [skip ci]"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" output-uno-stats:output-uno-stats

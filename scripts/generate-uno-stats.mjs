@@ -180,7 +180,7 @@ function dealAnimation({ index, finalX }) {
   ].join("; ");
 
   return `<animateTransform attributeName="transform" type="translate" values="${values}" keyTimes="${keyTimes}"
-    dur="1.6s" fill="freeze"/>`;
+    dur="2.5s" fill="freeze"/>`;
 }
 
 export function buildSvg(stats) {

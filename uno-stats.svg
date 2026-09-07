@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 900 220" width="900" height="220">
+  <g transform="translate(450,110)">
+    <g>
+    <g class="deck-card" data-i="0">
+      <rect x="-45" y="-65" width="90" height="130" rx="12" fill="#111"/>
+      <rect x="-40" y="-60" width="80" height="120" rx="10" fill="#0072BC" stroke="#fff" stroke-width="3"/>
+      <g transform="rotate(18)">
+        <ellipse cx="0" cy="0" rx="34" ry="48" fill="#fff"/>
+        <text x="0" y="15.64" font-family="Georgia, 'Times New Roman', serif" font-size="46"
+          font-weight="700" fill="#0072BC" text-anchor="middle">3</text>
+      </g>
+      <text x="-34" y="-44" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#fff">3</text>
+      <text x="0" y="-72" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle"
+        letter-spacing="1">JOINED YEARS</text>
+    </g><animateTransform attributeName="transform" type="translate" values="0,0; 18,0; -18,0; 18,0; 0,0; -240,0" keyTimes="0; 0.15; 0.3; 0.45; 0.6; 1"
+    dur="2.5s" fill="freeze"/></g>
+<g>
+    <g class="deck-card" data-i="1">
+      <rect x="-45" y="-65" width="90" height="130" rx="12" fill="#111"/>
+      <rect x="-40" y="-60" width="80" height="120" rx="10" fill="#38B449" stroke="#fff" stroke-width="3"/>
+      <g transform="rotate(18)">
+        <ellipse cx="0" cy="0" rx="34" ry="48" fill="#fff"/>
+        <text x="0" y="15.64" font-family="Georgia, 'Times New Roman', serif" font-size="46"
+          font-weight="700" fill="#38B449" text-anchor="middle">17</text>
+      </g>
+      <text x="-34" y="-44" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#fff">17</text>
+      <text x="0" y="-72" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle"
+        letter-spacing="1">STREAK THIS YEAR</text>
+    </g><animateTransform attributeName="transform" type="translate" values="0,0; -18,0; 18,0; -18,0; 0,0; -80,0" keyTimes="0; 0.15; 0.3; 0.45; 0.6; 1"
+    dur="2.5s" fill="freeze"/></g>
+<g>
+    <g class="deck-card" data-i="2">
+      <rect x="-45" y="-65" width="90" height="130" rx="12" fill="#111"/>
+      <rect x="-40" y="-60" width="80" height="120" rx="10" fill="#ED1C24" stroke="#fff" stroke-width="3"/>
+      <g transform="rotate(18)">
+        <ellipse cx="0" cy="0" rx="34" ry="48" fill="#fff"/>
+        <text x="0" y="11.56" font-family="Georgia, 'Times New Roman', serif" font-size="34"
+          font-weight="700" fill="#ED1C24" text-anchor="middle">534</text>
+      </g>
+      <text x="-34" y="-44" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#fff">534</text>
+      <text x="0" y="-72" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle"
+        letter-spacing="1">THIS YEAR</text>
+    </g><animateTransform attributeName="transform" type="translate" values="0,0; 18,0; -18,0; 18,0; 0,0; 80,0" keyTimes="0; 0.15; 0.3; 0.45; 0.6; 1"
+    dur="2.5s" fill="freeze"/></g>
+<g>
+    <g class="deck-card" data-i="3">
+      <rect x="-45" y="-65" width="90" height="130" rx="12" fill="#111"/>
+      <g transform="rotate(18)">
+        <ellipse cx="0" cy="0" rx="34" ry="48" fill="#fff"/>
+        
+      <g transform="translate(-11,-9) rotate(-14)">
+        <rect x="-11" y="-15" width="22" height="30" rx="4" fill="#ED1C24" stroke="#fff" stroke-width="1.5"/>
+        <circle cx="0" cy="0" r="6" fill="#fff"/>
+      </g>
+      <g transform="translate(11,-10) rotate(12)">
+        <rect x="-11" y="-15" width="22" height="30" rx="4" fill="#0072BC" stroke="#fff" stroke-width="1.5"/>
+        <path d="M0,-7 L6,5 L-6,5 Z" fill="#fff"/>
+      </g>
+      <g transform="translate(9,10) rotate(-10)">
+        <rect x="-11" y="-15" width="22" height="30" rx="4" fill="#38B449" stroke="#fff" stroke-width="1.5"/>
+        <path d="M0,-7 L7,0 L0,7 L-7,0 Z" fill="#fff"/>
+      </g>
+      <g transform="translate(-9,9) rotate(16)">
+        <rect x="-11" y="-15" width="22" height="30" rx="4" fill="#FFCC00" stroke="#fff" stroke-width="1.5"/>
+        <path d="M0,6 C-8,-2 -8,-8 0,-4 C8,-8 8,-2 0,6 Z" fill="#fff"/>
+      </g>
+      </g>
+      <text x="-34" y="-44" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#fff">+11</text>
+      <text x="0" y="-72" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#fff" text-anchor="middle"
+        letter-spacing="1">PAST 7 DAYS</text>
+    </g><animateTransform attributeName="transform" type="translate" values="0,0; -18,0; 18,0; -18,0; 0,0; 240,0" keyTimes="0; 0.15; 0.3; 0.45; 0.6; 1"
+    dur="2.5s" fill="freeze"/></g>
+  </g>
+</svg>

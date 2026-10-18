@@ -2,7 +2,7 @@ name: Generate UNO stats animation
 
 on:
   schedule:
-    - cron: "0 0 * * *" # runs daily at midnight UTC
+    - cron: "0 5 * * *" # runs daily at 05:00 UTC, just after midnight in New York
   workflow_dispatch:
 
 jobs:

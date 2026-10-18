@@ -66,8 +66,13 @@ export function computeStats({ createdAt, days }) {
   if (days[index] && days[index].contributionCount === 0) index--;
   for (; index >= 0 && days[index].contributionCount > 0; index--) currentStreak++;
 
-  const lastWeek = days.slice(-7).reduce((sum, d) => sum + d.contributionCount, 0);
-  const todayCount = days.length ? days[days.length - 1].contributionCount : 0;
+  // Sums from the most recent Sunday in New York through today, matching the Sunday-first weeks of GitHub's own graph.
+  const todayEt = new Date().toLocaleDateString("en-CA", { timeZone: "America/New_York" });
+  const weekdayEt = new Date(`${todayEt}T00:00:00Z`).getUTCDay();
+  const weekStart = new Date(Date.parse(`${todayEt}T00:00:00Z`) - weekdayEt * 86400000).toISOString().slice(0, 10);
+  const thisWeek = days
+    .filter((d) => d.date >= weekStart && d.date <= todayEt)
+    .reduce((sum, d) => sum + d.contributionCount, 0);
 
   // Filters by year prefix instead of issuing a second request, since the scraped page's trailing ~12-month window
   // already covers Jan 1 through today of the current year.
@@ -86,8 +91,7 @@ export function computeStats({ createdAt, days }) {
     yearsJoined,
     longestStreak,
     currentStreak,
-    lastWeek,
-    todayCount,
+    thisWeek,
     contributionsThisYear,
     longestStreakThisYear,
   };
@@ -184,17 +188,11 @@ function dealAnimation({ index, finalX }) {
 }
 
 export function buildSvg(stats) {
-  // Flips the wild card's metric once per day via days-since-epoch parity.
-  const daysSinceEpoch = Math.floor(Date.now() / 86400000);
-  const showToday = daysSinceEpoch % 2 === 0;
-  const wildValue = showToday ? stats.todayCount : stats.lastWeek;
-  const wildLabel = showToday ? "TODAY" : "PAST 7 DAYS";
-
   const cardsDef = [
     { kind: "number", value: stats.yearsJoined, label: "JOINED YEARS", color: COLORS.blue },
     { kind: "number", value: stats.longestStreakThisYear, label: "STREAK THIS YEAR", color: COLORS.green },
     { kind: "number", value: stats.contributionsThisYear, label: "THIS YEAR", color: COLORS.red },
-    { kind: "wild", value: wildValue, label: wildLabel },
+    { kind: "wild", value: stats.thisWeek, label: "THIS WEEK" },
   ];
 
   const n = cardsDef.length;
